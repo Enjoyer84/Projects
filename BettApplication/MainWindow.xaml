@@ -6,7 +6,55 @@
         xmlns:local="clr-namespace:BettApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+<Grid>
+<Button Width="120"
+                Height="40"
+                Margin="10,10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="10"
+                Click="Button_Click">
+            Add teams from Mozzart
+        </Button>
+
+        <!--<DocumentViewer Name="dvMain"
+                        Margin="0,60,0,0">
+        </DocumentViewer>-->
+        <!--<TextBlock Name="tbMain"
+                   Margin="0,60,0,0">
+        bla bla    
+        </TextBlock>-->
+        <ListView Margin="0,60,0,0" 
+                  Name="lvMain"
+                  Width="570"
+                  HorizontalAlignment="Left">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Time"
+				    DisplayMemberBinding="{Binding Time}"
+				    Width="100"/>
+                    <GridViewColumn Header="Home"
+				    DisplayMemberBinding="{Binding Home}"
+				    Width="100"/>
+                    <GridViewColumn Header="away"
+				    DisplayMemberBinding="{Binding Away}"
+				    Width="100"/>
+                    <GridViewColumn Header="League"
+				    DisplayMemberBinding="{Binding League}"
+				    Width="80"/>
+                    <GridViewColumn Header="k_1"
+				    DisplayMemberBinding="{Binding k_1}"
+				    Width="40"/>
+                    <GridViewColumn Header="k_X"
+				    DisplayMemberBinding="{Binding k_X}"
+				    Width="40"/>
+                    <GridViewColumn Header="k_2"
+				    DisplayMemberBinding="{Binding k_2}"
+				    Width="40"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         
     </Grid>
+
 </Window>
