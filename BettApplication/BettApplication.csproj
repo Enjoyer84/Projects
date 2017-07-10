@@ -111,7 +111,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\mozz60.png" />
+    <Resource Include="img\mozz64.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="img\mozz.png" />
   </ItemGroup>
