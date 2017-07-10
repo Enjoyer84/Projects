@@ -8,6 +8,8 @@ using System.Windows;
 using Newtonsoft.Json.Linq;
 using System.Data.SQLite;
 using System.Globalization;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace BettApplication
 {
@@ -22,6 +24,8 @@ namespace BettApplication
         private string firstPageParams = @"{""sports"":[1], ""dateRange"":{""from"":null, ""to"":null}, ""matchStatus"":[""READY""], ""matchSorting"":""BY_TIME"", ""selectedCompetitions"":[], ""selectedGames"":null, ""languageId"":1, ""matchNumber"":null, ""favouriteMatchNumbers"":[], ""pageNumber"":1}";
 
         private int numberOfPages = 1;
+
+        private Point pos ;
 
         private class Matches
         {
@@ -204,6 +208,52 @@ namespace BettApplication
             dtDateTime = dtDateTime.AddSeconds((unixTimeStamp / 1000) + 7200);//.ToLocalTime();
             var Time = dtDateTime.ToString("g", CultureInfo.CreateSpecificCulture("fr-BE"));
             return Time;
+        }
+
+        private void lvMain_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            ListView listView = sender as ListView;
+            GridView gView = listView.View as GridView;
+
+            var workingWidth = listView.ActualWidth - (SystemParameters.VerticalScrollBarWidth); // take into account vertical scrollbar
+            var col1 = 0.19;
+            var col2 = 0.19;
+            var col3 = 0.19;
+            var col4 = 0.19;
+            var col5 = 0.08;
+            var col6 = 0.08;
+            var col7 = 0.08;
+
+            var t1 = workingWidth * col1;
+            var t2 = workingWidth * col2;
+            var t3 = workingWidth * col3;
+            var t4 = workingWidth * col4;
+            var t5 = workingWidth * col5;
+            var t6 = workingWidth * col6;
+            var t7 = workingWidth * col7;
+            
+            gView.Columns[0].Width = t1 > 0 ? t1 : 1;
+            gView.Columns[1].Width = t2 > 0 ? t2 : 1;
+            gView.Columns[2].Width = t3 > 0 ? t3 : 1;
+            gView.Columns[3].Width = t4 > 0 ? t4 : 1;
+            gView.Columns[4].Width = t5 > 0 ? t5 : 1;
+            gView.Columns[5].Width = t6 > 0 ? t6 : 1;
+            gView.Columns[6].Width = t7 > 0 ? t7 : 1;
+            //gView.Columns[7].Width = t2 > 0 ? t2 : 1;
+
+        }
+
+        private void DockPanel_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            //pos = PointToScreen(Mouse.GetPosition(canvas)); //position relative to screen
+            pos = Mouse.GetPosition(DckPanel);
+            text.Content = pos.X;
+            //if (pos.X > 100) {
+
+            //}
+    
+//else if (pos.X == SystemParameters.PrimaryScreenWidth - 1)
+//                btn_meridian.Visibility = Visibility.Hidden;
         }
     }
 }
