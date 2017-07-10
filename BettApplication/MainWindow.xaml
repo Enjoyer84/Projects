@@ -6,55 +6,81 @@
         xmlns:local="clr-namespace:BettApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-<Grid>
-<Button Width="120"
-                Height="40"
+   <DockPanel>
+        <StackPanel Background="LightGray" DockPanel.Dock="Bottom" Orientation="Horizontal" MinHeight="20">
+        </StackPanel>
+        <Border DockPanel.Dock="Left">
+            <StackPanel MinWidth="100">
+
+                <Button Width="120"
+                Height="66"
                 Margin="10,10"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 FontSize="10"
                 Click="Button_Click">
-            Add teams from Mozzart
-        </Button>
 
-        <!--<DocumentViewer Name="dvMain"
-                        Margin="0,60,0,0">
-        </DocumentViewer>-->
-        <!--<TextBlock Name="tbMain"
-                   Margin="0,60,0,0">
-        bla bla    
-        </TextBlock>-->
-        <ListView Margin="0,60,0,0" 
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="20" Height="20"/>
+                        <TextBlock Text="Add teams from Mozzart" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <!--Add teams from Mozzart-->
+                </Button>
+                
+                
+                <!---->
+                <Button Width="120"
+                Height="66" 
+                Margin="10, 10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="10"
+                Click="Button_Click1">
+
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="img/mozz.jpg"/>
+                        <!--<TextBlock Text="Add teams from Meridian" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Height="15"/>-->
+                    </StackPanel>
+
+                </Button>
+
+            </StackPanel>
+        </Border>
+
+        <StackPanel>
+
+            <ListView Margin="0,0,0,0" 
                   Name="lvMain"
                   Width="570"
                   HorizontalAlignment="Left">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Time"
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Time"
 				    DisplayMemberBinding="{Binding Time}"
 				    Width="100"/>
-                    <GridViewColumn Header="Home"
+                        <GridViewColumn Header="Home"
 				    DisplayMemberBinding="{Binding Home}"
 				    Width="100"/>
-                    <GridViewColumn Header="away"
+                        <GridViewColumn Header="away"
 				    DisplayMemberBinding="{Binding Away}"
 				    Width="100"/>
-                    <GridViewColumn Header="League"
+                        <GridViewColumn Header="League"
 				    DisplayMemberBinding="{Binding League}"
 				    Width="80"/>
-                    <GridViewColumn Header="k_1"
+                        <GridViewColumn Header="k_1"
 				    DisplayMemberBinding="{Binding k_1}"
 				    Width="40"/>
-                    <GridViewColumn Header="k_X"
+                        <GridViewColumn Header="k_X"
 				    DisplayMemberBinding="{Binding k_X}"
 				    Width="40"/>
-                    <GridViewColumn Header="k_2"
+                        <GridViewColumn Header="k_2"
 				    DisplayMemberBinding="{Binding k_2}"
 				    Width="40"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        
-    </Grid>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+    </DockPanel>
 
 </Window>
