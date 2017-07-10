@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BettApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="651">
    <DockPanel>
         <StackPanel Background="LightGray" DockPanel.Dock="Bottom" Orientation="Horizontal" MinHeight="20">
         </StackPanel>
-        <Border DockPanel.Dock="Left">
+        <Border DockPanel.Dock="Left" Background="DarkGray">
             <StackPanel MinWidth="100">
 
                 <Button Width="120"
@@ -21,8 +21,13 @@
                 Click="Button_Click">
 
                     <StackPanel Orientation="Horizontal">
-                        <Image Width="20" Height="20"/>
-                        <TextBlock Text="Add teams from Mozzart" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                        <Image Width="40" Height="40" Source="img/mozz.png"/>
+                        <TextBlock Text="Add teams(Mozzart)"
+                                   VerticalAlignment="Center" 
+                                   TextWrapping="Wrap"
+                                   FontWeight="Bold"
+                                   MaxWidth="85"
+                                   Margin="9,0,0,0"/>
                     </StackPanel>
                     <!--Add teams from Mozzart-->
                 </Button>
@@ -35,10 +40,10 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 FontSize="10"
-                Click="Button_Click1">
+                >
 
                     <StackPanel Orientation="Horizontal" >
-                        <Image Source="img/mozz.jpg"/>
+                        <!--<Image Source="img/mozz.png"/>-->
                         <!--<TextBlock Text="Add teams from Meridian" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Height="15"/>-->
                     </StackPanel>
 
